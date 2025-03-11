@@ -16,7 +16,7 @@ export default function Home() {
           </div>
         </div>
         <div className=" flex justify-start relative">
-          <Image className="mix-blend-darken" src={"/work.jpg"} alt="vector" fill={true}></Image>
+          <Image className="mix-blend-darken" src={"/work.JPG"} alt="vector" fill={true}></Image>
         </div>
       </section>
     </main>
