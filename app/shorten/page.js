@@ -12,7 +12,9 @@ const shortener = () => {
     const [url, setUrl] = useState("")
     const [shorturl, setshorturl] = useState("")
     const [generated, setGenerated] = useState("")
+    const [isLoading, setIsLoading] = useState(false)
     const generate = () => {
+      setIsLoading(true);
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         
@@ -32,6 +34,7 @@ const shortener = () => {
           .then((response) => response.json())
           .then((result) => {
             setGenerated(`${process.env.NEXT_PUBLIC_HOST}/${shorturl}`)
+            setIsLoading(false)
               setUrl("")
               setshorturl("")
               console.log(result)
@@ -53,10 +56,10 @@ const shortener = () => {
                     className='p-2 border border-yellow-400 rounded-lg'
                     onChange={(e) => setshorturl(e.target.value)}
                     placeholder='Enter preferred short URL' />
-                <button className={`bg-yellow-500 shadow-lg p-3 py-1 font-bold rounded-lg text-white ${playfair.className}`} onClick={generate}>Generate</button>
+                <button className={`bg-yellow-500 shadow-lg p-3 py-1 font-bold rounded-lg text-white ${playfair.className}`} onClick={generate}>{isLoading?"Generating":"Generate"}</button>
             </div>
             {generated && <code>
-                <Link href={generated}>{generated}</Link>
+                <Link target='_blank' href={generated}>{generated}</Link>
                 </code>}
         </div>
     )

@@ -5,7 +5,7 @@ import clientPromise from "@/lib/mongodb"
 export default async function Page({params}){
     const shorturl = (await params).shorturl
     const client = await clientPromise;
-    const db = client.db("bitLinks")
+    const db = client.db("BitLinks") 
     const collection = db.collection("url")
     const doc = await collection.findOne({shorturl:shorturl})
     if(doc){
