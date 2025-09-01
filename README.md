@@ -1,3 +1,93 @@
+# 🔗 BitLinks – URL Shortener
+
+**BitLinks** is a lightweight and efficient **URL shortener** built using the **Next.js App Router** and **MongoDB**.  
+It lets users generate short, shareable links that redirect to the original URL in just a click.  
+
+> 📝 Tiny URLs, Big Impact 🚀
+
+---
+
+## [Live Link](https://bit-links-beryl.vercel.app/)-<a>https://bit-links-beryl.vercel.app/</a>
+
+---
+
+## 🚀 Features
+- ✨ Shorten long URLs into compact links  
+- 🔄 Redirect short URLs to the original destination  
+- 🗂️ Persistent storage using **MongoDB**  
+- ⚡ Powered by **Next.js API routes**  
+- 🎨 Clean UI with responsive design  
+
+---
+
+## 🛠️ Tech Stack
+- **Frontend & Routing**: [Next.js (App Router)](https://nextjs.org/)  
+- **Database**: [MongoDB](https://www.mongodb.com/)  
+- **API Handling**: Next.js API Routes  
+- **Styling**: CSS (globals.css)  
+
+---
+
+## 📂 Project Structure
+```bitlinks/
+│── app/ # Next.js App Router pages
+│ ├── [shorturl]/ # Dynamic route for redirection
+│ ├── about/ # About page
+│ ├── api/generate/ # API route for generating short URLs
+│ ├── fonts/ # Fonts used in the app
+│ ├── shorten/ # Page to create shortened links
+│ ├── globals.css # Global styles
+│ ├── layout.js # Root layout component
+│ └── page.js # Home page
+│
+│── components/ # Reusable React components
+│ └── Navbar.js # Navigation bar
+│
+│── lib/ # Database configuration
+│ └── mongodb.js # MongoDB connection file
+│
+│── public/ # Static assets
+│── .env.local # Environment variables
+│── package.json # Dependencies and scripts
+│── next.config.mjs # Next.js configuration
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/bitlinks.git
+   cd bitlinks
+```For node_modules
+npm install
+# or
+yarn install
+```
+
+Create a .env.local file in the root:
+
+MONGODB_URI=your-mongodb-connection-string
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+
+
+📌 Usage
+
+Go to the Shorten Page (/shorten)
+
+- Enter a long URL and generate a short link
+
+- Access the short link → it redirects to the original URL
+
+🔮 Future Enhancements
+
+- 📊 Add analytics (track number of clicks per link)
+
+- 🔐 User authentication for managing personal links
+
+- 🎨 Custom domains and QR code support
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
